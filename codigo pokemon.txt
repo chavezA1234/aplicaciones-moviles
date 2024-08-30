@@ -1,0 +1,21 @@
+function pokemonList() {
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=150")
+        .then(response => response.json())
+        .then(data => {
+            console.log("Lista de Pokémon:");
+            data.results.forEach(pokemon => {
+                const capitalizedName = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+                console.log(capitalizedName);
+
+                            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+function getDetailedPokemonInfo(pokemonName) {
+    
+}
+
+pokemonList();
